@@ -18,20 +18,20 @@ if (isset($_GET['action'], $_GET['user']) && $_GET['action'] === "view") {
       <h6>Data de cadatro - [".date('H:i:s | d/m/Y', strtotime($fetch['dt_cadastro']))."]<h6/>
       <hr>
         <div class='row mt-3'>
-            <div class='col-4'>
-                <div class='mb-3'>
-                    <label for='user' class='form-label'> &bull; Usuário:</label>
+            <div class='col-12 col-lg-4'>
+                <div class='mb-3 d-flex flex-column justify-content-start'>
+                    <label for='user' class='form-label text-start'> &bull; Usuário:</label>
                     <input type='text' class='form-control' name='user' id='user' placeholder='Preencha este campo.' required autocomplete='off' value='".$fetch['usuario']."' disabled>
                 </div>
             </div>
-            <div class='col-4'>
-                <div class='mb-3'>
+            <div class='col-12 col-lg-4'>
+                <div class='mb-3 d-flex flex-column justify-content-start'>
                     <label for='name' class='form-label text-start'>&bull; Nome:</label>
                     <input type='text' class='form-control' name='name' id='name' placeholder='Preencha este campo.' required autocomplete='off' value='".$fetch['nome']."' disabled>
                 </div>
             </div>
-            <div class='col-4'>
-                <div class='mb-3'>
+            <div class='col-12 col-lg-4'>
+                <div class='mb-3 d-flex flex-column justify-content-start'>
                     <label for='email' class='form-label text-start'>&bull; Email:</label>
                     <input type='email' class='form-control' name='email' id='email' placeholder='name@example.com' required autocomplete='off' value='".$fetch['email']."' disabled>
                 </div>
@@ -39,34 +39,34 @@ if (isset($_GET['action'], $_GET['user']) && $_GET['action'] === "view") {
         </div>
 
         <div class='row'>
-            <div class='col-4'>
-                <div class='mb-3'>
-                <label for='pass' class='form-label text-start'>&bull; Id usuário:</label>
+            <div class='col-12 col-lg-4'>
+                <div class='mb-3 d-flex flex-column justify-content-start'>
+                <label  class='form-label text-start'>&bull; Id usuário:</label>
                 <input type='text' class='form-control' name='id_usu' value='".$fetch['id_usu']."' readonly autocomplete='off' disabled>
                 </div>
             </div>
-            <div class='col-4'>
-                <div class='mb-3'>
-                <label for='pass' class='form-label text-start'>&bull; Status usuário:</label>
+            <div class='col-12 col-lg-4'>
+                <div class='mb-3 d-flex flex-column justify-content-start'>
+                <label class='form-label text-start'>&bull; Status usuário:</label>
                 <input type='text' class='form-control' name='status' value='".$fetch['status_usu']."' readonly autocomplete='off' disabled>
                 </div>
             </div>
-            <div class='col-4'>
-                <div class='mb-3'>
-                    <label for='tel' class='form-label'> &bull; Telefone:</label>
+            <div class='col-12 col-lg-4'>
+                <div class='mb-3 d-flex flex-column justify-content-start'>
+                    <label for='tel' class='form-label text-start'> &bull; Telefone:</label>
                     <input type='text' class='form-control' name='tel' id='tel' placeholder='(xx) xxxxx-xxxx' required autocomplete='off' value='".$fetch['telefone']."' disabled>
                 </div>
             </div>
         </div>
 
         <div class='row mt-3'>
-            <div class='col-4'>
+            <div class='col-12 col-lg-4'>
                 <div class='mb-3'>
                     <select class='form-select text-center' name='nvl' id='nvl' aria-label='Default select example' required disabled>";
                     switch ($fetch['nvl_acesso']) {
                         case 1:
-                            echo "<option value='1' selected>Administrador</option>
-                            <option value='2'>Funcionário</option>";
+                            echo "<option value='1' selected>Funcionário</option>
+                            <option value='2'>Administrador</option>";
                             break;
                         
                             case 2:
@@ -80,15 +80,15 @@ if (isset($_GET['action'], $_GET['user']) && $_GET['action'] === "view") {
                     </select>
                 </div>
             </div>
-            <div class='col-4'>
+            <div class='col-12 col-lg-4'>
                 <div class='input-group mb-3'>
-                    <input type='text' autocomplete='off' name='cpf' id='cpf' class='form-control' placeholder='xxx.xxx.xxx-xx' aria-label='Recipient's username' aria-describedby='basic-on2' value='".$fetch['cpf']."' required disabled>
+                    <input type='text' autocomplete='off' name='cpf' id='cpf' class='form-control text-center text-lg-start' placeholder='xxx.xxx.xxx-xx' aria-label='Recipient's username' aria-describedby='basic-on2' value='".$fetch['cpf']."' required disabled>
                     <span class='input-group-text' id='basic-on2'>CPF</span>
                 </div>
             </div>
-            <div class='col-4'>
+            <div class='col-12 col-lg-4'>
                 <div class='input-group mb-3'>
-                    <input type='text' autocomplete='off' name='cep' class='form-control' placeholder='xxxxx-xxx' aria-label='Recipient's username' aria-describedby='basic-on2' id='cep' value='".$fetch['cep']."' required disabled>
+                    <input type='text' autocomplete='off' name='cep' class='form-control text-center text-lg-start' placeholder='xxxxx-xxx' aria-label='Recipient's username' aria-describedby='basic-on2' id='cep' value='".$fetch['cep']."' required disabled>
                     <span class='input-group-text' id='basic-on2'>CEP</span>
                 </div>
             </div>
@@ -96,26 +96,26 @@ if (isset($_GET['action'], $_GET['user']) && $_GET['action'] === "view") {
         <h6>Localidade: <h6/>
         <hr>
         <div class='row mt-'>
-            <div class='col-4'>
-                <input type='text' class='form-control form-control-sm localidades-cep' id='uf' placeholder='UF' disabled>
+            <div class='col-12 col-lg-4 '>
+                <input type='text' class='form-control form-control-sm localidades-cep text-center text-lg-start' id='uf' placeholder='UF' disabled>
             </div>
-            <div class='col-4'>
-                <input type='text' class='form-control form-control-sm localidades-cep' id='cidade' placeholder='Cidade' disabled >
+            <div class='col-12 mt-2 mt-lg-0 col-lg-4'> 
+                <input type='text' class='form-control form-control-sm localidades-cep text-center text-lg-start' id='cidade' placeholder='Cidade' disabled >
             </div>
-            <div class='col-4'>
-                <input type='text' class='form-control form-control-sm localidades-cep' id='bairro' placeholder='Bairro' disabled>
+            <div class='col-12 mt-2 mt-lg-0 col-lg-4'>
+                <input type='text' class='form-control form-control-sm localidades-cep text-center text-lg-start' id='bairro' placeholder='Bairro' disabled>
             </div>
         </div>
         <div class='row mt-3'>
-            <div class='col-4'>
-                    <input type='text' class='form-control form-control-sm localidades-cep' id='logradouro' placeholder='Logradouro' disabled>
+            <div class='col-12 mt-2 mt-lg-0 col-lg-4'>
+                    <input type='text' class='form-control form-control-sm localidades-cep text-center text-lg-start' id='logradouro' placeholder='Logradouro' disabled>
             </div>
-            <div class='col-4'>
-                    <input type='text' class='form-control form-control-sm localidades-cep' id='endereco' placeholder='Endereço' disabled>
+            <div class='col-12 mt-2 mt-lg-0 col-lg-4'>
+                    <input type='text' class='form-control form-control-sm localidades-cep text-center text-lg-start' id='endereco' placeholder='Endereço' disabled>
             </div>
-            <div class='col-4'>
+            <div class='col-12 mt-2 mt-lg-0 col-lg-4'>
                     <div class='input-group input-group-sm mb-3'>
-                        <input type='text' name='num' value='".$fetch['num_localidade']."' id='locNumber' class='form-control' aria-label='Recipient's username' aria-describedby='basic-on2' autocomplete='off'  required disabled>
+                        <input type='text' name='num' value='".$fetch['num_localidade']."' id='locNumber' class='form-control text-center text-lg-start' aria-label='Recipient's username' aria-describedby='basic-on2' autocomplete='off'  required disabled>
                         <span class='input-group-text' >Número</span>
                     </div>
             </div>
