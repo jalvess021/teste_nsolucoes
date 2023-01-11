@@ -11,7 +11,7 @@
 	
     <div class="alert-login"><?php include "message/info.php";?></div>
 <div class="main-login">  	
-		<input type="checkbox" id="chk" aria-hidden="true" checked>
+		<input type="checkbox" id="chk" aria-hidden="true" checked disabled>
 
 			<div class="nsolucoes">
 				<h3>N Soluções</h3>

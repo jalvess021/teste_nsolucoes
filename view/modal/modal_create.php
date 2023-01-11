@@ -17,19 +17,19 @@ echo "
             <div class='col-4'>
                 <div class='mb-3'>
                     <label for='user' class='form-label'> &bull; Usuário:</label>
-                    <input type='text' class='form-control' name='user' id='user' placeholder='Preencha este campo.' required>
+                    <input type='text' class='form-control' name='user' id='user' placeholder='Preencha este campo.' required autocomplete='off'>
                 </div>
             </div>
             <div class='col-4'>
                 <div class='mb-3'>
                     <label for='name' class='form-label text-start'>&bull; Nome:</label>
-                    <input type='text' class='form-control' name='name' id='name' placeholder='Preencha este campo.' required>
+                    <input type='text' class='form-control' name='name' id='name' placeholder='Preencha este campo.' required autocomplete='off'>
                 </div>
             </div>
             <div class='col-4'>
                 <div class='mb-3'>
                     <label for='email' class='form-label text-start'>&bull; Email:</label>
-                    <input type='email' class='form-control' name='email' id='email' placeholder='name@example.com' required>
+                    <input type='email' class='form-control' name='email' id='email' placeholder='name@example.com' required autocomplete='off'>
                 </div>
             </div>
         </div>
@@ -38,19 +38,19 @@ echo "
             <div class='col-4'>
                 <div class='mb-3'>
                     <label for='pass' class='form-label text-start'>&bull; Senha:</label>
-                    <input type='password' class='form-control' name='pass' id='pass' placeholder='Mínimo 8 caractéres.' required>
+                    <input type='password' class='form-control' name='pass' id='pass' placeholder='Mínimo 8 caractéres.' required autocomplete='off'>
                 </div>
             </div>
             <div class='col-4'>
                 <div class='mb-3'>
                     <label for='pass' class='form-label text-start'>&bull; Confirmar Senha:</label>
-                    <input type='password' class='form-control' name='pass' id='passConfirm' disabled required>
+                    <input type='password' class='form-control' id='passConfirm' disabled required autocomplete='off'>
                 </div>
             </div>
             <div class='col-4'>
                 <div class='mb-3'>
                     <label for='tel' class='form-label'> &bull; Telefone:</label>
-                    <input type='text' class='form-control' name='tel' id='tel' id='tel' placeholder='(xx) xxxxx-xxxx' required>
+                    <input type='text' class='form-control' name='tel' id='tel' placeholder='(xx) xxxxx-xxxx' required autocomplete='off'>
                 </div>
             </div>
         </div>
@@ -67,49 +67,49 @@ echo "
             </div>
             <div class='col-4'>
                 <div class='input-group mb-3'>
-                    <input type='text' name='cpf' id='cpf' class='form-control' placeholder='xxx.xxx.xxx-xx' aria-label='Recipient's username' aria-describedby='basic-on2' required>
+                    <input type='text' autocomplete='off' name='cpf' id='cpf' class='form-control' placeholder='xxx.xxx.xxx-xx' aria-label='Recipient's username' aria-describedby='basic-on2' required>
                     <span class='input-group-text' id='basic-on2'>CPF</span>
                 </div>
             </div>
             <div class='col-4'>
                 <div class='input-group mb-3'>
-                    <input type='text' name='cep' class='form-control' placeholder='xxxxx-xxx' aria-label='Recipient's username' aria-describedby='basic-on2' id='cep' required>
+                    <input type='text' autocomplete='off' name='cep' class='form-control' placeholder='xxxxx-xxx' aria-label='Recipient's username' aria-describedby='basic-on2' id='cep' required>
                     <span class='input-group-text' id='basic-on2'>CEP</span>
                 </div>
             </div>
         </div>
         <h6>Localidade: <h6/>
         <hr>
-        <div class='row mt-3'>
+        <div class='row mt-'>
             <div class='col-4'>
-                <input type='text' id='estado' class='form-control form-control-sm localidades-cep' id='estado' placeholder='Estado' disabled readonly>
+                <input type='text' class='form-control form-control-sm localidades-cep' id='uf' placeholder='UF' disabled>
             </div>
             <div class='col-4'>
-                <input type='text' class='form-control form-control-sm localidades-cep' id='cidade' placeholder='Cidade' disabled readonly>
+                <input type='text' class='form-control form-control-sm localidades-cep' id='cidade' placeholder='Cidade' disabled >
             </div>
             <div class='col-4'>
-                <input type='text' class='form-control form-control-sm localidades-cep' id='bairro' placeholder='Bairro' disabled readonly>
+                <input type='text' class='form-control form-control-sm localidades-cep' id='bairro' placeholder='Bairro' disabled>
             </div>
         </div>
         <div class='row mt-3'>
             <div class='col-4'>
-                    <input type='text' class='form-control form-control-sm localidades-cep' id='complemento' placeholder='Complemento' disabled readonly>
+                    <input type='text' class='form-control form-control-sm localidades-cep' id='logradouro' placeholder='Logradouro' disabled>
             </div>
             <div class='col-4'>
-                    <input type='text' class='form-control form-control-sm localidades-cep' id='rua' placeholder='Rua'disabled readonly>
+                    <input type='text' class='form-control form-control-sm localidades-cep' id='endereco' placeholder='Endereço' disabled>
             </div>
             <div class='col-4'>
                     <div class='input-group input-group-sm mb-3'>
-                        <input type='text' name='num' class='form-control' aria-label='Recipient's username' aria-describedby='basic-on2' >
-                        <span class='input-group-text' id='basic-on2'>Número</span>
+                        <input type='text' name='num' id='locNumber' class='form-control' aria-label='Recipient's username' aria-describedby='basic-on2' autocomplete='off' required>
+                        <span class='input-group-text' >Número</span>
                     </div>
             </div>
         </div>
       </form>
       </div>
       <div class='modal-footer'>
-        <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
-        <button type='submit' form='formAdd' id='btnForm' class='btn btn-primary'>Understood</button>
+        <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Cancelar</button>
+        <button type='submit' form='formAdd' id='btnForm' class='btn btn-success' disabled >Enviar</button>
       </div>
     </div>
   </div>
@@ -119,10 +119,22 @@ echo "
 ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 <script>
-    var modalAdd = new bootstrap.Modal(document.getElementById('modalAdd'))
-    modalAdd.show();
+    var modalAdd = new bootstrap.Modal(document.getElementById('modalAdd'));
+
+    setTimeout(() => {
+        modalAdd.show();
+    }, 200);
+
     
-   
+    
+    var localidade = {
+        "uf": "",
+        "cidade": "",
+        "bairro": "",
+        "logradouro": "",
+        "rua": ""
+
+    }
     function verifyInputs() {
         setInterval(() => {
 
@@ -136,17 +148,20 @@ echo "
             const nvl = $('#nvl').val();
             const cpf = $('#cpf').val();
             const cep = $('#cep').val();
+            const locNumber = $('#locNumber').val();
+
+            const allLoc = $('.localidades-cep');
 
 
             //Input user
-            if (user.length < 5) {
+            if (user.length < 4) {
                 $('#user').addClass('is-invalid');
             }
                 if(user.length == 0){
                     $('#user').removeClass("is-invalid");
                     $('#user').removeClass("is-valid");
             } 
-            if(user.length >= 5) {
+            if(user.length >= 4) {
                 $('#user').removeClass("is-invalid");
                 $('#user').addClass('is-valid');
             }
@@ -235,17 +250,87 @@ echo "
                 $('#cpf').removeClass("is-valid");
             }
 
+            //Verificar CEP
+            regCep = /^[0-9]{5}\-[0-9]{3}$/g;
+            verifyCep = regCep.test(cep);
+                if (cep.length > 0) {
+                    if (verifyCep) {
+                            
+                            cepFormatApi = cep.replace(/[^0-9]/g, '');
+                            url = "https://cep.awesomeapi.com.br/json/"+cepFormatApi;
+                            fetch(url).then(function(response) {
+                                response.json().then(function(data){
+                                    localidade.uf = data.state;
+                                    localidade.cidade = data.city;
+                                    localidade.bairro = data.district;
+                                    localidade.logradouro = data.address_type;
+                                    localidade.endereco = data.address_name;
+
+                                    
+
+                                })
+                                if (response.status == 200) {
+                                    $('#cep').removeClass("is-invalid");
+                                    $('#cep').addClass("is-valid");
+                                    $('#locNumber').prop("disabled", false);
+                                    $('#uf').attr("placeholder", localidade.uf);
+                                    $('#cidade').attr("placeholder", localidade.cidade);
+                                    $('#bairro').attr("placeholder", localidade.bairro);
+                                    $('#logradouro').attr("placeholder", localidade.logradouro);
+                                    $('#endereco').attr("placeholder", localidade.endereco);
+                                }else{
+                                    $('#cep').removeClass("is-valid");
+                                    $('#cep').addClass("is-invalid");
+                                    $('#locNumber').prop("disabled", true);
+                                }
+                            })
+                            //Buscar cep api
+                    }else{
+                        $('#cep').removeClass("is-valid");
+                        $('#cep').addClass("is-invalid");
+                    }
+                }else{
+                    $('#cep').removeClass("is-invalid");
+                    $('#cep').removeClass("is-valid");
+                    $('#locNumber').prop("disabled", true);
+                }
+
+                //Input user
+                    if (locNumber.length < 1) {
+                        $('#locNumber').removeClass("is-valid");
+                    }else{
+                        $('#locNumber').addClass("is-valid");
+                    } 
+
+                if ($('#cep').hasClass("is-valid") && 
+                $('#user').hasClass("is-valid") && 
+                $('#name').hasClass("is-valid") && 
+                $('#pass').hasClass("is-valid") && 
+                $('#tel').hasClass("is-valid") && 
+                $('#email').hasClass("is-valid") && 
+                $('#passConfirm').hasClass("is-valid") && 
+                $('#nvl').hasClass("is-valid") && 
+                $('#cpf').hasClass("is-valid") && 
+                $('#locNumber').hasClass("is-valid")) {
+                    $('#btnForm').prop("disabled", false);
+                }
+
+
+            
+            
 
         }, 150);
 }
-    //Verifica o nivel
-    nvl.addEventListener("change",()=>{nvl.classList.add("is-valid");})
+nvl.addEventListener("change",()=>{nvl.classList.add("is-valid");})
     //Chama a funcao que verifica tudo
     verifyInputs();
     //Mascaras p/ preencher corretamente
     $("#tel").mask("(99) 99999-9999");
     $("#cpf").mask("999.999.999-99");
     $("#cep").mask("99999-999");
+
+ 
+    
     
 </script>
 

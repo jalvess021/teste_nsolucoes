@@ -16,6 +16,10 @@
 </head>
 <body class='body-plataform'>
     <div class="container text-center">
+        <div class="logout">
+        <a href='\teste_nsolucoes\model\logout.php' class="btn btn-danger fw-bold flloat-end"><i class="bi bi-arrow-bar-left"></i> Logout </a> 
+        </div>
+        
         <div class="row mt-3">
             <div class="col-12">
             <h3>Listagem de usuários</h3>
@@ -23,8 +27,15 @@
         </div>
         <div class="div-search">
                 <a href="\teste_nsolucoes/?page=plataform&action=add" class="btn btn-dark btn-lg" id='newUser'>Novo usuário</a>
-                <form class="d-flex" role="search">
-                    <input class="form-control form-control-lg me-2" type="search" placeholder="Search" aria-label="Search">
+                <form action='?page=plataform' method='post' class="d-flex" role="search">
+                    <input class="form-control form-control-lg me-2" list="datalistOptions" type="search" placeholder="Usuários" aria-label="Search" name='filter-user'>
+                    <datalist id="datalistOptions">
+                        <?php 
+                        $options = mysqli_query($connect, "SELECT usuario from usuario;");
+                        while ($infoOpt = mysqli_fetch_array($options)) {
+                            echo "<option value='".$infoOpt[0]."'>";
+                        }?>
+                    </datalist>
                     <button class="btn btn-outline-dark" type="submit">Pesquisar</button>
                 </form>
             </div>
@@ -50,8 +61,9 @@
                                 $inicio = ($quantidade * $pagina) - $quantidade;
 
                                 if (isset($_POST['filter-user'])) {
-                                    #SDASD
-                                }else{
+                                    $user = $_POST['filter-user'];
+                                    $data = mysqli_query($connect, "SELECT * from usuario where usuario='".$user."' order by id_usu asc limit $inicio, $quantidade;");
+                                }else {
                                     $data = mysqli_query($connect, "SELECT * from usuario order by id_usu asc limit $inicio, $quantidade;");
                                 }
 
@@ -64,16 +76,22 @@
                             <td><?= $info['telefone']?></td>
                             <td><?= $info['status_usu']?></td>
                             <td class='actions btn-group-sm'><?= "
-                                <a class='btn btn-xs' href='?content_adm=view_aula&id_usu=".$info['id_usu']."' data-toggle='tooltip' data-placement='top' title='Visualizar'> <i class='bi bi-eye-fill'></i> </a>
-                                <a class='btn btn-xs ml-2' href='?content_adm=lista_aula&edit_aula=".$info['id_usu']."' data-toggle='tooltip' data-placement='top' title='Editar'> <i class='bi bi-pencil-fill'></i> </a>
-                                <a href='?content_adm=lista_aula&delete_aula=".$info['id_usu']."' class='btn btn-xs ml-2' data-toggle='tooltip' data-placement='top' title='Excluir'> <i class='bi bi-trash-fill'></i></a>
+                                <a class='btn btn-xs' href='?page=plataform&action=view&user=".$info['id_usu']."' title='Visualizar'> <i class='bi bi-eye-fill'></i></a>
+                                <a class='btn btn-xs ml-2' href='?page=plataform&action=att&user=".$info['id_usu']."' title='Editar'> <i class='bi bi-pencil-fill'></i> </a>
+                                <a href='?page=plataform&action=delete&user=".$info['id_usu']."' class='btn btn-xs ml-2' title='Excluir'> <i class='bi bi-trash-fill'></i></a>
                             "?></td>
                         <?php endwhile; ?>
                         </tr>
                     </tbody>
                 </table>
                 <?php
-                        $sqlTotal = "select id_usu from usuario;";
+                        
+                        if (isset($_POST['filter-user'])) {
+                            $user = $_POST['filter-user'];
+                            $sqlTotal = "SELECT * from usuario where usuario='".$user."';";
+                        }else{
+                            $sqlTotal = "select id_usu from usuario;";
+                        }
 				
 						$qrTotal  		= mysqli_query($connect, $sqlTotal) or die (mysqli_error());
 						$numTotal 		= mysqli_num_rows($qrTotal);
@@ -97,4 +115,9 @@
         </div>
 </body>
 </html>
-<?php include "view/modal/modal_create.php";?>
+    <?php 
+    include "view/modal/modal_create.php";
+    include "view/modal/modal_update.php";
+    include "view/modal/modal_delete.php";
+    include "view/modal/modal_read.php";
+    ?>

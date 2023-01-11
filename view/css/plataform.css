@@ -9,6 +9,13 @@ html, body, *, ::after, ::before{
     box-sizing: border-box;
 }
 
+.logout{
+    margin-top: 20px;
+	width: 100%;
+	display: flex;
+	justify-content: end;
+	
+}
 
 .title{
     margin-top: 20px;

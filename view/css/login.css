@@ -16,6 +16,7 @@ body{
 	font-family: 'Jost', sans-serif;
 	background: linear-gradient(to bottom, #0c2910, #217c3f, #098a14);
 }
+
 .main-login{
 	width: 350px;
 	height: 500px;
@@ -49,7 +50,6 @@ body{
 	display: flex;
 	margin: 60px;
 	font-weight: bold;
-	cursor: pointer;
 	transition: .5s ease-in-out;
 }
 .main-login input{
@@ -95,7 +95,6 @@ body{
 	color: #1fa72a;
 	transform: scale(.6);
 }
-
 #chk:checked ~ .login{
 	transform: translateY(-500px);
 }

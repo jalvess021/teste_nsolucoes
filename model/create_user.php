@@ -15,14 +15,14 @@
       $cript = sha1($pass);
 
       $query = mysqli_query($connect, "INSERT into usuario (id_usu, usuario, nome, senha, cpf, email, telefone, status_usu,
-       nvl_acesso, dt_cadastro, cep) values ('0', '".$user."', '".$name."', '".$cript."', '".$cpf."', '".$email."', '".$tel."', 'Ativo', '".$nvl."', NOW(), '".$cep."');");
+       nvl_acesso, dt_cadastro, cep, num_localidade) values ('0', '".$user."', '".$name."', '".$cript."', '".$cpf."', '".$email."', '".$tel."', 'Ativo', '".$nvl."', NOW(), '".$cep."', '".$num."');");
 
       if ($query) {
         header('Location: \\teste_nsolucoes/?page=plataform&alert=1');
       }else {
-        header('Location: \\teste_nsolucoes/?page=plataform&alert=4');
+        header('Location: \\teste_nsolucoes/?page=plataform&alert=4&NADA');
       }
     }else {
-        header('Location: \\teste_nsolucoes/?page=plataform&alert=4');
+        header('Location: \\teste_nsolucoes/?page=plataform&alert=4&ASD');
     }
 ?>
