@@ -1,0 +1,44 @@
+.body-plataform{
+    height: 100%;
+    width: 100%;
+}
+
+html, body, *, ::after, ::before{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+.title{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.div-search{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 10px;
+}
+
+.alert-crud{
+    margin-top: 30px;
+    margin-bottom: -40px;
+}
+
+.title-legend{
+    color: rgb(3, 179, 3);
+}
+
+.actions a{
+    background-color: rgb(3, 179, 3) !important;
+    color: white !important;
+}
+
+
+.pagination a{
+    background-color: rgb(3, 179, 3) !important;
+}
