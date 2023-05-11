@@ -1,6 +1,6 @@
 # teste_nsolucoes
 
-- Projeto simples, feito em menos de 24h.
+- Projeto simples, feito em menos de 24h. Com a finalidade de cumprir um desafio proposto pela empresa <strong>N SOLUÕES</strong>.
 
 - Sistema de CRUD PHP com nível de acesso, verificação de localidade através do cep em tempo real, entre outras funcionalidades.
 
